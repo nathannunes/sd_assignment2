@@ -1,6 +1,14 @@
 #include <iostream>
+#include <fstream>
 
-int main() {
-    std::cout << "Second Assignment" << std::endl;
+using namespace std;
+
+int main(int argc, char** argv) {
+    // Abstract Factory, Clone , Singleton
+    // Inheritance , Abstract Classes
+    ofstream inputFile;
+    inputFile.open();
+
+    cout << "Second Assignment" << endl;
     return 0;
 }
