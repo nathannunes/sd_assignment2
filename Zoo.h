@@ -5,14 +5,15 @@
 #ifndef A2_ZOO_H
 #define A2_ZOO_H
 
+// This class will be singleton
 
 class Zoo {
 public:
-    Zoo* getInstance();
+    static Zoo* getInstance();
 
 private:
-    Zoo();
-    ~Zoo();
+    Zoo(){};
+    ~Zoo(){};
     static Zoo* instance_;
 };
 
