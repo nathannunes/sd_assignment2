@@ -6,7 +6,7 @@
 #define A2_SERPENT_H
 #include "Animal.h"
 
-class Serpent : Animal{
+class Serpent : public Animal{
     public:
         string getName(){ return this->name; }
         string getType(){ return this->type; }

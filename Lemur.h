@@ -6,7 +6,7 @@
 #define A2_LEMUR_H
 #include "Animal.h"
 
-class Lemur : Animal{
+class Lemur : public Animal{
     public:
         string getName(){ return this->name; }
         string getType(){ return this->type; }

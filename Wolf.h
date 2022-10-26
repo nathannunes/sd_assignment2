@@ -6,7 +6,7 @@
 #define A2_WOLF_H
 #include "Animal.h"
 
-class Wolf : Animal{
+class Wolf : public Animal{
     public:
         string getName(){ return this->name; }
         string getType(){ return this->type; }

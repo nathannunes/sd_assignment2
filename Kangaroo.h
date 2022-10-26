@@ -8,7 +8,7 @@
 
 #include "Animal.h"
 
-class Kangaroo : Animal{
+class Kangaroo : public Animal{
     public:
         string getName(){ return this->name; }
         string getType(){ return this->type; }
