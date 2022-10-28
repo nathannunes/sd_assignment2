@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <memory>
 #include <vector>
 #include "AbstractFactory.cpp"
@@ -18,6 +17,9 @@ int main(int argc, char** argv) {
     while(std::getline(std::cin, input)){
         cout << input << endl;
         string animalName = input.substr(0,input.find(' '));
+        // transform to lower case
+        transform(animalName.begin(), animalName.end(), animalName.begin() , ::tolower);
+        // strip space and get number of animals
         int numberOfAnimals = stoi(input.substr(input.find(' ')+1,input.length()));
         
         if(animalName == "tiger"){
