@@ -7,10 +7,10 @@ using namespace std;
 
 // Create Dictionary of Game Of Thrones Character names
 string getRandomNames(){
-    string arr[] = {"Jacky","Tom","Andrew","Mozzie", "Tywin", "Tyrion", "Jamie", "Cersei", "Arya", "Sansa",
+    vector<string> arr = {"Jacky","Tom","Andrew","Mozzie", "Tywin", "Tyrion", "Jamie", "Cersei", "Arya", "Sansa",
                     "John", "Khal Drogo", "Margaery", "Robb", "Ygritte", "Oberyn", "Ros", "Talisa" };
 
-    return arr[ rand() % 16];
+    return arr[ rand() % arr.size()];
 }
 
 
@@ -23,8 +23,6 @@ int main(int argc, char** argv) {
     while(std::getline(std::cin, input)){
         cout << input << endl;
         string animalName = input.substr(0,input.find(' '));
-        // transform to lower case
-        transform(animalName.begin(), animalName.end(), animalName.begin() , ::tolower);
         // strip space and get number of animals
         int numberOfAnimals = stoi(input.substr(input.find(' ')+1,input.length()));
         
