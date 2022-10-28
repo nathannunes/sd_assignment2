@@ -28,7 +28,7 @@ public:
     virtual void setType(string type) = 0;
     virtual void setAction(string action) = 0;
     virtual void setFood(string food) = 0;
-    virtual Animal* clone() const;
+    virtual Animal* clone() const = 0;
     
 
 };
