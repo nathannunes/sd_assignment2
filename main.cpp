@@ -5,15 +5,21 @@
 
 using namespace std;
 
+// Create Dictionary of Game Of Thrones Character names
+string getRandomNames(){
+    string arr[] = {"Jacky","Tom","Andrew","Mozzie", "Tywin", "Tyrion", "Jamie", "Cersei", "Arya", "Sansa",
+                    "John", "Khal Drogo", "Margaery", "Robb", "Ygritte", "Oberyn", "Ros", "Talisa" };
+
+    return arr[ rand() % 16];
+}
+
+
 int main(int argc, char** argv) {
     // Abstract Factory, Clone , Singleton
     // Inheritance , Abstract Classes
-    vector<string> tigerNames;
-    tigerNames.push_back("A");
-    tigerNames.push_back("B");
-    tigerNames.push_back("C");
+
     string input;
-    int pop,i=0;
+    int i=0;
     while(std::getline(std::cin, input)){
         cout << input << endl;
         string animalName = input.substr(0,input.find(' '));
@@ -26,7 +32,7 @@ int main(int argc, char** argv) {
             shared_ptr<AbstractFactory> factory = make_shared<TigerFactory>();
             for(int k=0;k<numberOfAnimals;k++){
                 shared_ptr<Animal> animal = factory->create();
-                animal->setName(tigerNames[rand()%tigerNames.size()]);
+                animal->setName(getRandomNames());
                 animal->setType("tiger");
                 animal->setAction("roar");
                 animal->setFood("meat");
@@ -37,7 +43,7 @@ int main(int argc, char** argv) {
             shared_ptr<AbstractFactory> factory = make_shared<WolfFactory>(); 
             for(int k=0;k<numberOfAnimals;k++){           
                 shared_ptr<Animal> animal = factory->create();
-                animal->setName("WolfName");
+                animal->setName(getRandomNames());
                 animal->setType("wolf");
                 animal->setAction("growl");
                 animal->setFood("chicken");
@@ -48,7 +54,7 @@ int main(int argc, char** argv) {
             shared_ptr<AbstractFactory> factory = make_shared<LemurFactory>();    
             for(int k=0;k<numberOfAnimals;k++){        
                 shared_ptr<Animal> animal = factory->create();
-                animal->setName("lemurName");
+                animal->setName(getRandomNames());
                 animal->setType("lemur");
                 animal->setAction("squeak");
                 animal->setFood("fruit");
@@ -59,7 +65,7 @@ int main(int argc, char** argv) {
             shared_ptr<AbstractFactory> factory = make_shared<KangarooFactory>(); 
             for(int k=0;k<numberOfAnimals;k++){           
                 shared_ptr<Animal> animal = factory->create();
-                animal->setName("kangarooName");
+                animal->setName(getRandomNames());
                 animal->setType("kangaroo");
                 animal->setAction("click");
                 animal->setFood("carrots");
@@ -70,7 +76,7 @@ int main(int argc, char** argv) {
             shared_ptr<AbstractFactory> factory = make_shared<SerpentFactory>(); 
             for(int k=0;k<numberOfAnimals;k++){           
                 shared_ptr<Animal> animal = factory->create();
-                animal->setName("serpentName");
+                animal->setName(getRandomNames());
                 animal->setType("serpent");
                 animal->setAction("hiss");
                 animal->setFood("mice");
@@ -84,3 +90,4 @@ int main(int argc, char** argv) {
     }
     return 0;
 }
+
