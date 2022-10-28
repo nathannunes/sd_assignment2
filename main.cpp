@@ -28,19 +28,22 @@ int main(int argc, char** argv) {
         
         if(animalName == "tiger"){
             shared_ptr<AbstractFactory> factory = make_shared<TigerFactory>();
-            for(int k=0;k<numberOfAnimals;k++){
-                shared_ptr<Animal> animal = factory->create();
-                animal->setName(getRandomNames());
-                animal->setType("tiger");
-                animal->setAction("roar");
-                animal->setFood("meat");
-                animal->printMessage();
+            shared_ptr<Animal> animal = factory->create();
+            animal->setName(getRandomNames());
+            animal->setType("tiger");
+            animal->setAction("roar");
+            animal->setFood("meat");
+            animal->printMessage();
+            for(int k=0;k<numberOfAnimals-1;k++){
+                Animal* clonedAnimal = animal->clone();
+                clonedAnimal->setName(getRandomNames());
+                clonedAnimal->printMessage();
             }
         }
         else if(animalName == "wolf"){
             shared_ptr<AbstractFactory> factory = make_shared<WolfFactory>(); 
             for(int k=0;k<numberOfAnimals;k++){           
-                shared_ptr<Animal> animal = factory->create();
+                shared_ptr<Animal> animal = factory->create();            
                 animal->setName(getRandomNames());
                 animal->setType("wolf");
                 animal->setAction("growl");

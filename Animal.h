@@ -17,17 +17,18 @@ protected:
     string action;
     string food;
 public:
-    ~Animal(){};
-    Animal(){};
+    //~Animal(){};
+    //Animal(){};
     virtual string getName() const = 0;
     virtual string getType() const = 0;
     virtual string getAction() const = 0;
-    virtual string getFood() const =0;
-    virtual void printMessage() const =0;
-    virtual void setName(string name) const =0;
-    virtual void setType(string type) const =0;
-    virtual void setAction(string action) const=0;
-    virtual void setFood(string food) const=0;
+    virtual string getFood() const = 0;
+    virtual void printMessage() const = 0;
+    virtual void setName(string name) = 0;
+    virtual void setType(string type) = 0;
+    virtual void setAction(string action) = 0;
+    virtual void setFood(string food) = 0;
+    virtual Animal* clone() const;
     
 
 };
