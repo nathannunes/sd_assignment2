@@ -19,75 +19,68 @@ int main(int argc, char** argv) {
     // Inheritance , Abstract Classes
 
     string input;
-    int i=0;
     while(std::getline(std::cin, input)){
         cout << input << endl;
         string animalName = input.substr(0,input.find(' '));
         // strip space and get number of animals
         int numberOfAnimals = stoi(input.substr(input.find(' ')+1,input.length()));
-        
+        shared_ptr<AbstractFactory> factory;
+        shared_ptr<Animal> animal;
         if(animalName == "tiger"){
-            shared_ptr<AbstractFactory> factory = make_shared<TigerFactory>();
-            shared_ptr<Animal> animal = factory->create();
+            factory = make_shared<TigerFactory>();
+            animal = factory->create();
             animal->setName(getRandomNames());
             animal->setType("tiger");
             animal->setAction("roar");
             animal->setFood("meat");
             animal->printMessage();
-            for(int k=0;k<numberOfAnimals-1;k++){
-                Animal* clonedAnimal = animal->clone();
-                clonedAnimal->setName(getRandomNames());
-                clonedAnimal->printMessage();
-            }
         }
         else if(animalName == "wolf"){
-            shared_ptr<AbstractFactory> factory = make_shared<WolfFactory>(); 
-            for(int k=0;k<numberOfAnimals;k++){           
-                shared_ptr<Animal> animal = factory->create();            
-                animal->setName(getRandomNames());
-                animal->setType("wolf");
-                animal->setAction("growl");
-                animal->setFood("chicken");
-                animal->printMessage();
-            }
+            factory = make_shared<WolfFactory>(); 
+            animal = factory->create();            
+            animal->setName(getRandomNames());
+            animal->setType("wolf");
+            animal->setAction("growl");
+            animal->setFood("chicken");
+            animal->printMessage();
         }
         else if(animalName == "lemur"){
-            shared_ptr<AbstractFactory> factory = make_shared<LemurFactory>();    
-            for(int k=0;k<numberOfAnimals;k++){        
-                shared_ptr<Animal> animal = factory->create();
-                animal->setName(getRandomNames());
-                animal->setType("lemur");
-                animal->setAction("squeak");
-                animal->setFood("fruit");
-                animal->printMessage();
-            }
+            factory = make_shared<LemurFactory>();   
+            animal = factory->create();
+            animal->setName(getRandomNames());
+            animal->setType("lemur");
+            animal->setAction("squeak");
+            animal->setFood("fruit");
+            animal->printMessage(); 
         }
         else if(animalName == "kangaroo"){
-            shared_ptr<AbstractFactory> factory = make_shared<KangarooFactory>(); 
-            for(int k=0;k<numberOfAnimals;k++){           
-                shared_ptr<Animal> animal = factory->create();
-                animal->setName(getRandomNames());
-                animal->setType("kangaroo");
-                animal->setAction("click");
-                animal->setFood("carrots");
-                animal->printMessage();
-            }
+            factory = make_shared<KangarooFactory>(); 
+            animal = factory->create();
+            animal->setName(getRandomNames());
+            animal->setType("kangaroo");
+            animal->setAction("click");
+            animal->setFood("carrots");
+            animal->printMessage();
+            
         }
         else if(animalName == "serpent"){
-            shared_ptr<AbstractFactory> factory = make_shared<SerpentFactory>(); 
-            for(int k=0;k<numberOfAnimals;k++){           
-                shared_ptr<Animal> animal = factory->create();
-                animal->setName(getRandomNames());
-                animal->setType("serpent");
-                animal->setAction("hiss");
-                animal->setFood("mice");
-                animal->printMessage();
-            }
+            factory = make_shared<SerpentFactory>();                     
+            animal = factory->create();
+            animal->setName(getRandomNames());
+            animal->setType("serpent");
+            animal->setAction("hiss");
+            animal->setFood("mice");
+            animal->printMessage();
         }
         else{
             cout<<"Invalid animal type"<<endl;
+            break;
         }
-        i++;
+        for(int k=0;k<numberOfAnimals-1;k++){        
+            Animal* clonedAnimal = animal->clone();
+            clonedAnimal->setName(getRandomNames());
+            clonedAnimal->printMessage();
+        }
     }
     return 0;
 }
