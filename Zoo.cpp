@@ -17,3 +17,23 @@ Zoo* Zoo::getInstance() {
     }
     return(instance_);
 }
+
+int Zoo::totalTigers = 0;
+int Zoo::totalKangaroo=0;
+int Zoo::totalLemur=0;
+int Zoo::totalSerpant=0;
+int Zoo::totalWolves=0;
+
+void Zoo::incrementWolves() {
+    totalWolves++;
+}void Zoo::incrementSerpent() {
+    totalSerpant++;
+}void Zoo::incrementLemur() {
+    totalLemur++;
+}void Zoo::incrementKangaroo() {
+    totalLemur++;
+}
+void Zoo::incrementTigers() {
+    totalTigers++;
+}
+
