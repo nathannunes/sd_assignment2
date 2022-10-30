@@ -65,32 +65,32 @@ EQUALS = =
 # Targets provided globally by CMake.
 
 # Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+#rebuild_cache:
+#	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+#	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+#.PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+#rebuild_cache/fast: rebuild_cache
 
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+#.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+#edit_cache:
+#	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+#	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+#.PHONY : edit_cache
 
-.PHONY : edit_cache/fast
+# Special rule for the target edit_cache
+#edit_cache/fast: edit_cache
+
+#.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rajatp/Downloads/sd_assignment2-main/CMakeFiles /home/rajatp/Downloads/sd_assignment2-main/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /CMakeFiles /CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rajatp/Downloads/sd_assignment2-main/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,9 +114,9 @@ preinstall/fast:
 .PHONY : preinstall/fast
 
 # clear depends
-depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
-.PHONY : depend
+#depend:
+#	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+#.PHONY : depend
 
 #=============================================================================
 # Target rules for targets named A2
@@ -204,7 +204,7 @@ help:
 # Special rule to run CMake to check the build system integrity.
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
-cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
-.PHONY : cmake_check_build_system
+#cmake_check_build_system:
+#	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+#.PHONY : cmake_check_build_system
 
