@@ -16,8 +16,17 @@ class Lemur : public Animal{
         void setType(string type){ this->type = type; }
         void setAction(string action){ this->action = action; }
         void setFood(string food){ this->food = food; }
-        void printMessage() const{
-            cout<<"I am a "<<this->type<<" , my name is "<<this->name<<", I "<<this->action<<", and I eat "<<this->food<<endl;            
+        string printMessage() const{
+            string a = "I am a ";
+            a.append(this->type);
+            a.append(" , my name is ");
+            a.append(this->name);
+            a.append(", I ");
+            a.append(this->action);
+            a.append(", and I eat ");
+            a.append(this->food);
+            a.append("\n");
+            return a;
         }
         Lemur* clone() const{
             Lemur* cloned = new Lemur(*this);

@@ -23,7 +23,7 @@ public:
     virtual string getType() const = 0;
     virtual string getAction() const = 0;
     virtual string getFood() const = 0;
-    virtual void printMessage() const = 0;
+    virtual string printMessage() const = 0;
     virtual void setName(string name) = 0;
     virtual void setType(string type) = 0;
     virtual void setAction(string action) = 0;
