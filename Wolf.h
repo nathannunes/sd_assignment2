@@ -1,7 +1,9 @@
 //
 // Created by Nathan Nunes on 10/26/22.
 //
-
+/**
+ * Nathan Nunes & Rajat Pandey
+ */
 #ifndef A2_WOLF_H
 #define A2_WOLF_H
 #include "Animal.h"

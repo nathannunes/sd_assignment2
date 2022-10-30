@@ -6,6 +6,10 @@
 #include "AbstractFactory.cpp"
 #include "Zoo.h"
 
+/**
+ * Nathan Nunes & Rajat Pandey
+ */
+
 using namespace std;
 
 

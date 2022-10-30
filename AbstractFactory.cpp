@@ -1,3 +1,7 @@
+/**
+ * Nathan Nunes & Rajat Pandey
+ */
+
 #include <iostream>
 #include <memory>
 #include "Animal.h"

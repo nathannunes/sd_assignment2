@@ -2,6 +2,10 @@
 // Created by Nathan Nunes on 10/20/22.
 //
 
+/**
+ * Nathan Nunes & Rajat Pandey
+ */
+
 #ifndef A2_ZOO_H
 #define A2_ZOO_H
 
